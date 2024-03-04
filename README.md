@@ -42,7 +42,7 @@
 
 ## 사전학습
 
-데이터를 분석하기 전 도메인에 대한 이해를 위해 사전학습을 실시
+데이터를 분석하기 전 도메인에 대한 이해를 위해 사전학습을 실시하였다.
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/9edc635f-9b7c-4835-a65a-6a4290f023ac)
 
