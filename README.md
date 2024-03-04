@@ -178,6 +178,68 @@ RandomizedSearch의 폴드 수는 5, 경우의 수는 10가지만 돌려서 결�
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/d5af5cbd-9f1f-4bbf-ba4a-4943e1071931)
 
+## 모델 성능 평가
+
+✅ CASE 1 - 근로기간 Unknown 값 제외 모델링
+
+최고 성능 모델의 파라미터 : XGBClassifier(objective='multi:softmax', n_estimators=100, max_depth=30, learning_rate=0.1, n_jobs=-1, random_state=42)
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/1f097546-f693-4455-bdd5-81fc810456c2)
+
+✅ CASE 2 - 근로기간 Unknown 값 포함 모델링
+
+
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/debfdd20-ba9b-44c5-9666-d0c299df2cd5)
+
+✅ CASE 3 - 근로기간 Unknown 값 KNN Imputer로 대체 후 모델링
+
+
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/593185d2-7705-4535-88b8-72b5e3592dc1)
+
+📊 특성 중요도를 통한 인사이트
+
+CASE 1~3의 모델별 특성 중요도 평균 값을 계산하여 그래프를 그린 결과
+
+총상환원금, 총상환이자, 대출기간에 대한 특성중요도가 높게 나타났다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/7ea5d836-78da-4953-931f-5ca77b4d05d8)
+
+대출등급별 총상환원금과 총상환이자의 분포를 확인해보니 군집이 명확하게 분류되는 것을 확인하였다.
+
+총상환원금 대비 총상환이자가 많을 경우 대출등급이 낮게 나타났다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/a7abf093-966b-4bed-ad08-25aeae88cc3d)
+
+또한 대출기간별로 그룹을 나누어 대출등급별 경향을 확인한 결과 마찬가지로 군집이 명확하게 분류되는 것을 확인하였다.
+
+최종적으로 총상환원금, 총상환이자 그리고 대출기간 3개의 데이터가 대출 등급을 결정하는 핵심 요소임을 확인하였고, 이를 이용하여 후행 모델링을 진행하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/7cb125db-95ab-497e-8030-f870b2adc49c)
+
+✅ CASE 4 - CASE 1~3 결과에서 특성 중요도가 낮은 컬럼 4개 제외 후 모델링
+
+총상환원금, 총상환이자, 대출기간을 이용하여 특성공학을 수행하기 전 임의로 특성중요도가 가장 낮았던 4개 컬럼을 제거한 후 모델링을 진행하였다.
+
+모델 복잡도가 낮아진다고 성능이 무조건 좋아지는 것은 아니지만, 여기에서는 복잡도를 줄여 성능 향상을 얻어냈다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/83303357-b040-4312-b96b-1caf95153d63)
+
+✅ CASE 5 - Feature Engineering 적용 (총상환원금, 총상환이자, 대출기간 이용)
+
+총상환원금, 총상환이자, 대출기간으로 사칙연산, 제곱, 제곱근을 이용하여 파생변수를 생성하였다.
+
+여러가지 시도를 통해 총상환원금과 이자를 대출기간에 곱하고, 나눈 컬럼을 이용하여 모델링 했을 때 최상의 결과를 출력했다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/5a5529b5-735e-45e7-967a-c486a5404c9b)
+
+
+✅ CASE 6 - CASE 5 결과에서 RFE를 적용 -> 최종결과
+
+RFE를 적용하여 특성 중요도가 가장 높은 컬럼 5개를 이용하여 모델링 한 결과 가장 우수한 성능을 얻어냈다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/5564500c-e101-4754-8649-b3a5a9a44985)
 
 
 
@@ -202,3 +264,15 @@ RandomizedSearch의 폴드 수는 5, 경우의 수는 10가지만 돌려서 결�
 
 
 
+
+
+
+최종 결과인 85%의 결과가 모델 성능이 좋다/나쁘다를 논하기는 어렵겠지만, 여러가지 다양한 시도를 통해 모델 성능을 향상시키는 과정을 지나온 것이 유의미 했던것 같다.
+
+
+최종적으로 얻은 인사이트
+
+1. 모델링으로 얻은 특성중요도를 통해 EDA에서 파악하지 못한 데이터에 대한 새로운 경향을 파악할 수 있었다.
+2. 특성 공학을 활용하여 모델 성능을 높일 수 있었다.
+3. (분석한 데이터를 기준으로) 대출등급 결정하는 핵심 요소가 총상환원금, 총상환이자 그리고 대출기간임을 확인할 수 있었다.
+4. 다양한 시도를 통해 모델 성능을 비교하는 과정에서 의도한대로 성능이 올라간 경우도 있었지만 반대로 낮아진 경우도 있었다. 내가 예측하는 기댓값이 무조건 나올거라는 보장이 없다는 것을 몸소 느꼈다.
