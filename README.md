@@ -69,15 +69,36 @@ https://dacon.io/competitions/official/236214/data
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/de2d0167-1c8a-41f0-9c8d-5d796f09f0d4)
 
+✅ Outlier 처리 (부채 대비 소득 비율)
+
+이상치 처리 후 분포가 균일해짐을 확인하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/0c991eb7-002f-4cea-aa1b-6ed57076488a)
+
+✅ Outlier 처리 (최근 2년간 연체 횟수)
+
+1인 1대출을 전제로 2년간 연체 횟수가 24번을 초과하는 데이터를 이상치로 판단 후 제거하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/9dc22250-4824-460c-b377-a30f0da313ca)
+
+✅ Outlier 처리 (주택소유상태)
+
+'ANY'라는 데이터가 하나만 존재하므로 이상치로 판단 후 제거하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/821a25c2-a0ae-4f81-a8fe-a651142ae64e)
 
 
+✅ 데이터 수치화 (대출기간)
 
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/b99ea7b6-d3c9-49d4-bf3a-b86814293ed5)
 
+✅ 데이터 수치화 (근로기간)
 
+근로기간에는 Unknown이라는 데이터가 존재하는데, 전체 데이터의 5%를 차지하기 때문에 이상치로 판단하지 않고 
 
+이후 모델링 단계에서 여러가지 시도를 통해 성능을 비교할 예정이다.
 
-
-
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/cca725bc-3d16-4775-b5e6-20d309e85d29)
 
 
 
