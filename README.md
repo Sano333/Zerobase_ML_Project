@@ -140,9 +140,23 @@ Unknown 값을 제외하여도 전체적 경향은 크게 변하지 않았다.
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/72e0184d-5e8b-4cef-b36d-89ce5132574b)
 
+📊 대출 등급별 대출 특성 시각화
 
+A~C등급은 주로 3년짜리 대출이 많았고, D등급 부터는 5년짜리 대출이 많았다.
 
+대출 등급이 높을 수록 상환능력이 좋아서 짧게 설정했거나, 금리가 낮기 때문에 이자 부담이 상대적으로 적으므로 대출 기간을 짧게 설정한 것으로 판단하였다.
 
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/0cc4dc3e-bfb2-468b-80c1-85b97be66959)
+
+대출 등급이 높을 수록 고소득자가 많았다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/608888d3-1f7b-47b4-8e9a-afb85367a2d7)
+
+A~D등급은 2천만원 미만의 대출이 주를 이루었고, E~G등급은 2천만원 이상의 대출이 주를 이루었다.
+
+2천만원이 기준인 이유는 데이터에서 최대 대출금액이 4200만원으로 중간 정도의 2천만원으로 분포를 비교하고자 하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/d577c47c-039a-48b0-af27-636cf6718dc6)
 
 
 
