@@ -14,6 +14,7 @@
     - 주제 선정배경
     - 사전학습
     - 프로젝트 개요
+    - 데이터 출처
 * 2.EDA
     - 데이터 전처리
 * 3.시각화
@@ -100,11 +101,44 @@ https://dacon.io/competitions/official/236214/data
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/cca725bc-3d16-4775-b5e6-20d309e85d29)
 
+-----
 
+# 3. 시각화
 
+📊 상관계수 확인
 
+대출기간, 총상환이자가 상대적으로 대출등급과 높은 상관계수를 보였다. (0.44)
 
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/3fd6998c-d17d-420b-876b-eaa57c65449e)
 
+📊 target-feature 관계 시각화
+
+대출 등급이 낮아질수록 대출금액, 총상환이자, 부채 대비 소득 비율, 총연체금액은 증가하는 경향을 보이고
+
+연간소득과 총상환원금은 감소하는 경향을 보였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/e8b864ed-a9a4-4c2c-b30d-49a1350f4e6f)
+
+📊 근로기간에 따른 특성 분포
+
+근로기간의 Unknown 데이터의 경우, MORTGAGE가 가장 많은 비중을 차지하지만 
+다른 집단과 비교하였을 때 OWN의 비중이 상대적으로 높게 나타난다. 
+
+ʻOWN’이 많은 Unknown에는 연소득이 높은 사람들이 많을 것으로 예상했다.
+
+그러나 데이터를 확인해보니 연간소득 1억원 미만의 분포가 89%를 차지했다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/80198cd1-688f-43d4-9c68-a59b9b1812e9)
+
+📊 Unknown 데이터 유무에 따른 경향 파악
+
+Unknown을 포함한 데이터와 제외한 데이터의 대출 등급별 주택소유상태를 비교한 결과
+
+Unknown 값을 제외하여도 전체적 경향은 크게 변하지 않았다.
+
+이를 통해 Unknown 값이 모델링 성능에 크게 영향을 미치지 않을 것이라고 판단하였다.
+
+![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/72e0184d-5e8b-4cef-b36d-89ce5132574b)
 
 
 
