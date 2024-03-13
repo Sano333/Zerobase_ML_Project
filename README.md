@@ -182,19 +182,13 @@ RandomizedSearch의 폴드 수는 5, 경우의 수는 10가지만 돌려서 결�
 
 ✅ CASE 1 - 근로기간 Unknown 값 제외 모델링
 
-최고 성능 모델의 파라미터 : XGBClassifier(objective='multi:softmax', n_estimators=100, max_depth=30, learning_rate=0.1, n_jobs=-1, random_state=42)
-
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/1f097546-f693-4455-bdd5-81fc810456c2)
 
 ✅ CASE 2 - 근로기간 Unknown 값 포함 모델링
 
-
-
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/debfdd20-ba9b-44c5-9666-d0c299df2cd5)
 
 ✅ CASE 3 - 근로기간 Unknown 값 KNN Imputer로 대체 후 모델링
-
-
 
 ![image](https://github.com/Sano333/Zerobase_ML_Project/assets/149456385/593185d2-7705-4535-88b8-72b5e3592dc1)
 
